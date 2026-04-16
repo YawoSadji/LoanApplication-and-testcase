@@ -1,0 +1,46 @@
+{
+  "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "05707d23-99b8-488d-a83f-714246358733",
+      "type": "process",
+      "input": {
+        "type": "object",
+        "properties": {
+          "LoanTerm": {
+            "type": "string",
+            "x-default-expression": "\"5\"",
+            "default": "5"
+          },
+          "LoanGranted": {
+            "type": "string",
+            "x-default-expression": "\"No\"",
+            "default": "No"
+          },
+          "LoanAge": {
+            "type": "string",
+            "x-default-expression": "\"35\"",
+            "default": "35"
+          },
+          "LoanIncome": {
+            "type": "string",
+            "x-default-expression": "\"30000\"",
+            "default": "30000"
+          },
+          "LoanAmount": {
+            "type": "string",
+            "x-default-expression": "\"120000\"",
+            "default": "120000"
+          },
+          "LoanEmail": {
+            "type": "string",
+            "x-default-expression": "\"uipath@gmail.com\"",
+            "default": "uipath@gmail.com"
+          }
+        },
+        "required": []
+      }
+    }
+  ]
+}
