@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="TestCaseLoan1" this:TestCaseLoan1.LoanAmount="120000" this:TestCaseLoan1.LoanTerm="5" this:TestCaseLoan1.LoanIncome="30000" this:TestCaseLoan1.LoanAge="35" this:TestCaseLoan1.LoanGranted="No" this:TestCaseLoan1.Message="Sorry, at this time you have not been approved for a loan." xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="TestCaseLoan1" this:TestCaseLoan1.LoanEmail="uipath@gmail.com" this:TestCaseLoan1.LoanAmount="120000" this:TestCaseLoan1.LoanTerm="5" this:TestCaseLoan1.LoanIncome="30000" this:TestCaseLoan1.LoanAge="35" this:TestCaseLoan1.LoanGranted="No" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="LoanEmail" Type="InArgument(x:String)" />
     <x:Property Name="LoanAmount" Type="InArgument(x:String)" />
@@ -7,13 +7,7 @@
     <x:Property Name="LoanAge" Type="InArgument(x:String)" />
     <x:Property Name="LoanGranted" Type="InArgument(x:String)" />
     <x:Property Name="LoanRate" Type="InArgument(x:String)" />
-    <x:Property Name="Message" Type="InArgument(x:String)" />
   </x:Members>
-  <this:TestCaseLoan1.LoanEmail>
-    <InArgument x:TypeArguments="x:String">
-      <Literal x:TypeArguments="x:String" Value="" />
-    </InArgument>
-  </this:TestCaseLoan1.LoanEmail>
   <this:TestCaseLoan1.LoanRate>
     <InArgument x:TypeArguments="x:String">
       <Literal x:TypeArguments="x:String" Value="" />
@@ -51,6 +45,25 @@
       <x:String>GlobalConstantsNamespace</x:String>
       <x:String>System.Reflection</x:String>
       <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.Testing</x:String>
+      <x:String>UiPath.Testing.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.Pipelines.Activities.CustomTypes</x:String>
+      <x:String>UiPath.Pipelines.Activities.Models</x:String>
+      <x:String>UiPath.Orchestrator.Client.Api.Models</x:String>
+      <x:String>UiPath.Pipelines.Activities</x:String>
+      <x:String>UiPath.Pipelines.Activities.Persistence</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -84,44 +97,182 @@
       <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>UiPath.Testing</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>UiPath.Pipelines.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Orchestrator.Client</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TestCaseLoan1" sap:VirtualizedContainerService.HintSize="892.4000000000001,484" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TestCaseLoan1" sap:VirtualizedContainerService.HintSize="892.4000000000001,1473.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="OutputText" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="449.6,121.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="585.6,121.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Sequence>
-    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="449.6,226.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="585.6,259.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Invoke Workflow File" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Main.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Main - Invoke Workflow File (Main.xaml)" sap:VirtualizedContainerService.HintSize="416,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Main.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:String" x:Key="LoanEmail">[LoanEmail]</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="LoanAmount">[LoanAmount]</InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="LoanTerm">[LoanTerm]</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="LoanIncome">[LoanIncome]</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="LoanAge">[LoanAge]</InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="LoanGranted">[LoanGranted]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="LoanAge">[LoanAge]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="LoanIncome">[LoanIncome]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="LoanAmount">[LoanAmount]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="LoanEmail">[LoanEmail]</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>
-    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="449.6,112.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="585.6,1069.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome UiBank-Loan result" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="552,986.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="1a175ea5-feac-45cc-82b0-cbc913279d68" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="518.4,746.4" sap2010:WorkflowViewState.IdRef="Sequence_13">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[LoanGranted]" sap:VirtualizedContainerService.HintSize="484.8,304.8" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+                <Switch.Default>
+                  <Sequence DisplayName="Default" sap:VirtualizedContainerService.HintSize="449.6,24.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </Switch.Default>
+                <Sequence x:Key="No" DisplayName="Body" sap:VirtualizedContainerService.HintSize="449.6,24.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NGetText DisplayName="Get Text 'Sorry, at this time you…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,189.6" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="1a175ea5-feac-45cc-82b0-cbc913279d68" TextString="[OutputText]" Version="V5">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="uibank.uipath.com/loans/result//0/false" ContentHash="XTwo54ZTO0SG8E-n-WgSDA" DesignTimeRectangle="377, 501, 1165, 145" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H1' /&gt;" Guid="ab5712bb-eb61-4fe1-a9f8-e17470d47367" InformativeScreenshot="277f0652ff69aa387a378e9eda67019c.png" Reference="LNi6pmQVakuhvy_a07e6kg/NdJqbNKUwk-7daSBE0VOPw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='UiBank-Loan result' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+                    </uix:NGetText.Target>
+                  </uix:NGetText>
+                  <uta:VerifyExpressionWithOperator AlternativeVerificationTitle="{x:Null}" ContinueOnFailure="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" DisplayName="Verify Expression with Operator" sap:VirtualizedContainerService.HintSize="416,219.2" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_3" Operator="Equality" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
+                    <uta:VerifyExpressionWithOperator.FirstExpression>
+                      <InArgument x:TypeArguments="x:String">[OutputText]</InArgument>
+                    </uta:VerifyExpressionWithOperator.FirstExpression>
+                    <uta:VerifyExpressionWithOperator.SecondExpression>
+                      <InArgument x:TypeArguments="x:String">["Sorry, at this time you have not been approved for a loan."]</InArgument>
+                    </uta:VerifyExpressionWithOperator.SecondExpression>
+                  </uta:VerifyExpressionWithOperator>
+                </Sequence>
+                <Sequence x:Key="Yes" DisplayName="Body" sap:VirtualizedContainerService.HintSize="449.6,24.8" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NGetText DisplayName="Get Text 'Congrats!'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,189.6" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="1a175ea5-feac-45cc-82b0-cbc913279d68" TextString="[OutputText]" Version="V5">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="uibank.uipath.com/loans/result/69e03e1b75bb540fbf7700f8/9/true" CVScreenId="260902e4-cd84-45f8-87ee-4b30eef1a7cf" ContentHash="tcWMcEGWJkWThVe7ToBj_Q" CvType="AnyWordGroup" DesignTimeRectangle="377, 358, 1165, 72" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H1' /&gt;" Guid="13b86c8c-2de6-4afc-a569-5aec5872897d" InformativeScreenshot="952d5c4521f4a10a77a978cdf50d1396.png" Reference="LNi6pmQVakuhvy_a07e6kg/hv6jmgDd80Wl8J4s8RA6Bg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='UiBank-Loan result' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+                    </uix:NGetText.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NGetText>
+                  <uta:VerifyExpressionWithOperator AlternativeVerificationTitle="{x:Null}" ContinueOnFailure="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" DisplayName="Verify Expression with Operator" sap:VirtualizedContainerService.HintSize="416,219.2" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_4" Operator="Equality" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
+                    <uta:VerifyExpressionWithOperator.FirstExpression>
+                      <InArgument x:TypeArguments="x:String">[OutputText]</InArgument>
+                    </uta:VerifyExpressionWithOperator.FirstExpression>
+                    <uta:VerifyExpressionWithOperator.SecondExpression>
+                      <InArgument x:TypeArguments="x:String">["Congrats!"]</InArgument>
+                    </uta:VerifyExpressionWithOperator.SecondExpression>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uta:VerifyExpressionWithOperator>
+                </Sequence>
+              </Switch>
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484.8,380" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                <ui:CommentOut.Body>
+                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,276.8" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Apply For Another Loan'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,216.8" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1a175ea5-feac-45cc-82b0-cbc913279d68" Version="V5">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="uibank.uipath.com/loans/result//0/false" CVScreenId="3333e59a-da81-46ab-adee-4ae80a6d1e66" ContentHash="Iz9YnW3oPUqGYQhM9PgpAw" CvElementArea="678, 720, 299, 64" CvTextArea="705, 740, 242, 26" CvTextArgument="Apply For Another Loan" CvType="Button" DesignTimeRectangle="680, 722, 295, 61" ElementType="Button" FullSelectorArgument="&lt;webctrl id='applyForNewLoanButton' tag='BUTTON' /&gt;" Guid="20f4eb6c-3065-42fb-9b2f-c865f6b748f4" InformativeScreenshot="cf0c68dc13178193944eebf098cc5285.png" Reference="LNi6pmQVakuhvy_a07e6kg/isFASVu5jUaJlXciMHD6Tw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='UiBank-Loan result' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                    </uix:NClick>
+                  </Sequence>
+                </ui:CommentOut.Body>
+              </ui:CommentOut>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="-9, -9, 1938, 1098" BrowserType="Chrome" ContentHash="IT8nIUd9RUKWgJEevVPnHw" IconBase64="iVBORw0KGgoAAAANSUhEUgAAAJkAAACZCAMAAAALgmiIAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABgUExURfpGFv/////5+P/z8P7u6f7o4v7i2v7c0/7WzP7Rxf3Lvf3Ftv2/r/25p/2zoPyumfyokfyiiv2dhP2XfPyMbvyGZvyAX/x6WPx1UftvSftpQvtjO/tdM/tXLPpSJfpMHehXRNgAAAMzSURBVHhe7Ztrd6IwEIbBO+utrlXxVv//vyzgi5CZRJpzks3u2ff50nZCmUcISYQh2/2tZIQQQgghpGKP1VECPqHgYJono4CCA5pZoJk/NPOHZv7QzB+a+ZPcbFyM8Jsgrdnm1GQ5bfB3n5RmszOyZNl5hlhHQrPNA0kaPhB9kc5sbohl2QLxlmRmowtStFzFlZDM7AMZOsT5TGbW9f6WG1pAMrMvZOhhJktlNkGCPgXanniZLQqTMeIuZtiupTdo2fKu0fbEy+yGaIv5ITXyy+wn4hVzhPr8QtuTVGa5GM1qzBEtmZkczrLsyxzQkpntEes4oAUkMxvLnX1N0AKSmanM5pWZ0kzMT+JcJjXLF1fEq5nJHDFqUprlo+2xlrset5YVd1Kzhjl+StKbuaBZA81oZue/NBvSplkDzWhmh2YVNGugGc0AzRpoRjM7NKugWQPNaAZo1kAzmtkxzbr790/kYw/JnzMrEW3xNdsj3hDU7Ihoyw5xF/KTGNsHNZM78zUzyn+CmsmX2+TOJG/7ZVAzWf1xQdzBGJu9MK7loGZrRFsejtIxoPZtPCgParZE9IXradaTLbZ6YTz1DWqmTo8qzTJ4lr11mOU1Qc1UwcAVcSsTWfhg5g5rpgoGZNFYH3UyzYE5rJm8BPTT7w5VYCZ2FtZsinDHEi0a9WavqOIKa6ZWG9ndNXDMVHmNSB3YTFemXOwFVVP1GeThDWymT6ddzSImJ4zAZmq5UXFboa1jc0dbjy3aWkKb2erGsvOy39tGKzmT16gOGdrMUp1V8ziui2Kez4tiK0d+IA9ZeDM1d/6Mh+qNwc3UcvBnqEMWwWxi6d2DyLQV4c2G/sWGrHyuiWCm550hHrrGPo6Zd1ezTq5RzMaOkcHOQ4/ENVHM9G7fcHes4SKZWYroHVxEyeeLWGb5ylJEbOHg/HoVzSyf7Ifdyjd3i+KZVUudgd52fnsXK6ZZtfI4uI/byb0Qb4hrVrH4bVl9XPfGushKdLOKyWq3O5VlNZ/eyvK4261dl6PBEm/Et8hDHMIsDjTzh2b+0MwfmvlDM39o5g/N/KGZP/+s2blMhv3mJiGEEEIGybJvLix2/tJuKyAAAAAASUVORK5CYII=" InformativeScreenshot="c59b0cffddea659992c4afe5e1def768.jpg" Reference="LNi6pmQVakuhvy_a07e6kg/qIps-rdRtUOSb2Z1N6_tCA" Selector="&lt;html app='chrome.exe' title='UiBank-Loan result' /&gt;" Url="https://uibank.uipath.com/loans/result//0/false" Version="V2" />
+        </uix:NApplicationCard.TargetApp>
+      </uix:NApplicationCard>
     </Sequence>
   </Sequence>
 </Activity>

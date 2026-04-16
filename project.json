@@ -4,7 +4,10 @@
   "description": "LoanApplication-and-testcase",
   "main": "Main.xaml",
   "dependencies": {
+    "UiPath.Excel.Activities": "[3.5.0-preview]",
+    "UiPath.Pipelines.Activities": "[3.0.4]",
     "UiPath.System.Activities": "[26.2.4]",
+    "UiPath.Testing.Activities": "[25.10.2]",
     "UiPath.UIAutomation.Activities": "[25.10.8]"
   },
   "webServices": [],
@@ -18,7 +21,7 @@
     "isPausable": true,
     "isAttended": false,
     "requiresUserInteraction": true,
-    "supportsPersistence": false,
+    "supportsPersistence": true,
     "workflowSerialization": "NewtonsoftJson",
     "excludedLoggedData": [
       "Private:*",
